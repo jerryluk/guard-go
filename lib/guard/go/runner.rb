@@ -48,7 +48,7 @@ module Guard
         if @options[:build_only]
           @proc = ChildProcess.build("go", "build")
         else
-          @proc = ChildProcess.build("go", "run", @options[:server], @options[:args_to_s])
+          @proc = ChildProcess.build("go", "run", @options[:server], *@options[:args])
         end
       end
 
